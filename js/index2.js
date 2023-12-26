@@ -2,12 +2,13 @@
 {
     document.write('Start', "<br>")
 
-    const balanseMembers = 100
+    const balanseMembers = 800
 
-    const productPiseString = prompt('how mutch does price cost?')
-    const productPriceNumber = +productPiseString
+    const productPiseString = prompt('Сколько стоит товар?')
+    const productPriceNumber = Number(productPiseString)
 
-    if (!productPriceNumber) {
+
+    if (isNaN(productPriceNumber)) {
         document.write('Введите коректное число')
     } else {
         if (productPriceNumber <= balanseMembers) {
