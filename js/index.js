@@ -1,62 +1,85 @@
 
+const dictionaryWords = {
 
-const word1 = {
-    original: 'apple',
-    translation: 'яблоко'
+    word1: {
+        original: 'apple',
+        translation: 'яблоко'
+    },
+    word2: {
+        original: 'orange',
+        translation: 'апельсин'
+    },
+    word3: {
+        original: 'banana',
+        translation: 'банан'
+    },
+    word4: {
+        original: 'lemon',
+        translation: 'лимон'
+    }
 }
-const word2 = {
-    original: 'orange',
-    translation: 'апельсин'
-}
-const word3 = {
-    original: 'banana',
-    translation: 'банан'
-}
-const word4 = {
-    original: 'lemon',
-    translation: 'лимон'
+
+
+
+const resultMesseges = {
+    finishSuccses: 'Молодец хорошая работа',
+    finishUnSuccses: 'Молодец, Но постарайся лучше',
+    right: 'Правильно',
+    wrong: 'Неправильно'
 }
 
 
+const setings = {
+    correctAnswerProcent: 50
+}
+
+const result = {
+    currentCountUserAnser: 0
+}
 
 
-const finishSuccsesMessage = 'Молодец хорошая работа'
-const finishUnSuccsesMessage = 'Молодец, Но постарайся лучше'
-
-let currentCountUserAnser = 0
 let wordsCount = 4
 
 
 
 if (confirm('Переведи слово, начнем?')) {
 
-    let = userAnse1 = prompt(word1.original)
-    if (userAnse1 === word1.translation) {
-        currentCountUserAnser++
-    }
-    let = userAnse2 = prompt(word2.original)
-    if (userAnse2 === word2.translation) {
-        currentCountUserAnser++
-    }
-    let = userAnse3 = prompt(word3.original)
-    if (userAnse3 === word3.translation) {
-        currentCountUserAnser++
-    }
+    let = userAnse1 = prompt(dictionaryWords.word1.original)
+    if (userAnse1 === dictionaryWords.word1.translation) {
+        result.currentCountUserAnser++
+        alert(resultMesseges.right)
+    } else alert(resultMesseges.wrong)
 
-    let = userAnse4 = prompt(word4.original)
-    if (userAnse4 === word4.translation) {
-        currentCountUserAnser++
-    }
 
-    const userCorrentAnwerPercent = currentCountUserAnser / wordsCount * 100
-    const persent = 50
-    if (userCorrentAnwerPercent > persent) {
-        alert(`правильных ответов ${currentCountUserAnser}! ${finishSuccsesMessage}`)
+    let = userAnse2 = prompt(dictionaryWords.word2.original)
+    if (userAnse2 === dictionaryWords.word2.translation) {
+        result.currentCountUserAnser++
+        alert(resultMesseges.right)
+    } else alert(resultMesseges.wrong)
+
+
+    let = userAnse3 = prompt(dictionaryWords.word3.original)
+    if (userAnse3 === dictionaryWords.word3.translation) {
+        result.currentCountUserAnser++
+        alert(resultMesseges.right)
+    } else alert(resultMesseges.wrong)
+
+
+    let = userAnse4 = prompt(dictionaryWords.word4.original)
+    if (userAnse4 === dictionaryWords.word4.translation) {
+        result.currentCountUserAnser++
+        alert(resultMesseges.right)
+    } else alert(resultMesseges.wrong)
+
+    const userCorrentAnwerPercent = result.currentCountUserAnser / wordsCount * 100
+
+    if (userCorrentAnwerPercent > setings.correctAnswerProcent) {
+        alert(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishSuccses}`)
     } else {
-        alert(`правильных ответов ${currentCountUserAnser}! ${finishUnSuccsesMessage}`)
+        alert(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishUnSuccses}`)
     }
 } else (
     alert('Пока')
 )
 
-console.log(currentCountUserAnser)
+console.log(result.currentCountUserAnser)
