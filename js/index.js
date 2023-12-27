@@ -1,23 +1,22 @@
 
-const dictionaryWords = {
-
-    word1: {
+const words = [
+    {
         original: 'apple',
         translation: 'яблоко'
     },
-    word2: {
+    {
         original: 'orange',
         translation: 'апельсин'
     },
-    word3: {
+    {
         original: 'banana',
         translation: 'банан'
     },
-    word4: {
+    {
         original: 'lemon',
         translation: 'лимон'
-    }
-}
+    },
+]
 
 
 
@@ -38,40 +37,37 @@ const result = {
 }
 
 
-let wordsCount = 4
-
-
 
 if (confirm('Переведи слово, начнем?')) {
 
-    let = userAnse1 = prompt(dictionaryWords.word1.original)
-    if (userAnse1 === dictionaryWords.word1.translation) {
+    let = userAnse1 = prompt(words[0].original)
+    if (userAnse1 === words[0].translation) {
         result.currentCountUserAnser++
         alert(resultMesseges.right)
     } else alert(resultMesseges.wrong)
 
 
-    let = userAnse2 = prompt(dictionaryWords.word2.original)
-    if (userAnse2 === dictionaryWords.word2.translation) {
+    let = userAnse2 = prompt(words[1].original)
+    if (userAnse2 === words[1].translation) {
         result.currentCountUserAnser++
         alert(resultMesseges.right)
     } else alert(resultMesseges.wrong)
 
 
-    let = userAnse3 = prompt(dictionaryWords.word3.original)
-    if (userAnse3 === dictionaryWords.word3.translation) {
+    let = userAnse3 = prompt(words[2].original)
+    if (userAnse3 === words[2].translation) {
         result.currentCountUserAnser++
         alert(resultMesseges.right)
     } else alert(resultMesseges.wrong)
 
 
-    let = userAnse4 = prompt(dictionaryWords.word4.original)
-    if (userAnse4 === dictionaryWords.word4.translation) {
+    let = userAnse4 = prompt(words[3].original)
+    if (userAnse4 === words[3].translation) {
         result.currentCountUserAnser++
         alert(resultMesseges.right)
     } else alert(resultMesseges.wrong)
 
-    const userCorrentAnwerPercent = result.currentCountUserAnser / wordsCount * 100
+    const userCorrentAnwerPercent = result.currentCountUserAnser / words.length * 100
 
     if (userCorrentAnwerPercent > setings.correctAnswerProcent) {
         alert(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishSuccses}`)
@@ -82,4 +78,5 @@ if (confirm('Переведи слово, начнем?')) {
     alert('Пока')
 )
 
+console.log(words.length)
 console.log(result.currentCountUserAnser)
