@@ -18,13 +18,11 @@ const words = [
     },
 ]
 
-
+const arrayOfincorrectWords = []
 
 const resultMesseges = {
     finishSuccses: 'Молодец хорошая работа',
     finishUnSuccses: 'Молодец, Но постарайся лучше',
-    right: 'Правильно',
-    wrong: 'Неправильно'
 }
 
 
@@ -40,39 +38,25 @@ const result = {
 
 if (confirm('Переведи слово, начнем?')) {
 
-    let = userAnse1 = prompt(words[0].original)
-    if (userAnse1 === words[0].translation) {
-        result.currentCountUserAnser++
-        alert(resultMesseges.right)
-    } else alert(resultMesseges.wrong)
+    for (let i = 0; i < words.length; i++) {
+        let = userAnsewer = prompt(words[i].original)
+        if (userAnsewer === words[i].translation) {
+            result.currentCountUserAnser++
+        } else {
+            arrayOfincorrectWords.push(userAnsewer)
+        }
+    }
+    if (arrayOfincorrectWords.length >= 1) {
+        document.write(`список не правильных слов ${"<br>"} ${arrayOfincorrectWords} ${"<br>"}`)
+    }
 
-
-    let = userAnse2 = prompt(words[1].original)
-    if (userAnse2 === words[1].translation) {
-        result.currentCountUserAnser++
-        alert(resultMesseges.right)
-    } else alert(resultMesseges.wrong)
-
-
-    let = userAnse3 = prompt(words[2].original)
-    if (userAnse3 === words[2].translation) {
-        result.currentCountUserAnser++
-        alert(resultMesseges.right)
-    } else alert(resultMesseges.wrong)
-
-
-    let = userAnse4 = prompt(words[3].original)
-    if (userAnse4 === words[3].translation) {
-        result.currentCountUserAnser++
-        alert(resultMesseges.right)
-    } else alert(resultMesseges.wrong)
 
     const userCorrentAnwerPercent = result.currentCountUserAnser / words.length * 100
 
     if (userCorrentAnwerPercent > setings.correctAnswerProcent) {
-        alert(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishSuccses}`)
+        document.write(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishSuccses}`)
     } else {
-        alert(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishUnSuccses}`)
+        document.write(`правильных ответов ${result.currentCountUserAnser}! ${resultMesseges.finishUnSuccses}`)
     }
 } else (
     alert('Пока')
